@@ -6,8 +6,8 @@ const DriversPageDisplayName = 'Drivers';
 const DriversPageRoute = '/drivers';
 const ClientsPageDisplayName = 'Clients';
 const ClientsPageRoute = '/clients';
-const AuthenticationPageDisplayName = 'Log Out';
-const AuthenticationPageRoute = "/authentication";
+const AuthenticationPageDisplayName = 'Out';
+const AuthenticationPageRoute = "/auth";
 
 class MenuItem {
   final String name;
