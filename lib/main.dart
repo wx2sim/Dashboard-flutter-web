@@ -3,7 +3,10 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:website/controllers/menu_controller.dart';
 import 'package:website/controllers/navigation_controller.dart';
+import 'package:website/layout.dart';
+import 'package:website/pages/404/error_page.dart';
 import 'package:website/pages/authentication/authentication.dart';
+import 'package:website/routing/routes.dart';
 import 'constants/style.dart';
 
 void main() {
@@ -18,6 +21,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      initialRoute: AuthenticationPageRoute,
+      opaqueRoute: true,
+      unknownRoute: GetPage(
+          name: "/not-found",
+          page: () => PageNotFound(),
+          transition: Transition.fadeIn),
+      getPages: [
+        GetPage(name: RootRoute, page: () => SiteLayout()),
+        GetPage(
+            name: AuthenticationPageRoute, page: () => AuthenticationPage()),
+      ],
       debugShowCheckedModeBanner: false,
       title: "My DashBoard",
       theme: ThemeData(
@@ -32,7 +46,6 @@ class MyApp extends StatelessWidget {
         }),
         primaryColor: Colors.black,
       ),
-      home: AuthenticationPage(),
     );
   }
 }
