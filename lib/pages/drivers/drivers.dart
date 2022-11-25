@@ -17,6 +17,9 @@ class DriversPage extends StatelessWidget {
       children: [
         Obx(() => Row(
               children: [
+                SizedBox(
+                  height: 60,
+                ),
                 Container(
                   margin: EdgeInsets.only(
                       top: Responsivewidget.isSmallScreen(context) ? 56 : 6),
@@ -30,10 +33,29 @@ class DriversPage extends StatelessWidget {
               ],
             )),
         Expanded(
-            child: ListView(
-          children: [
-            DriversTableee(),
-          ],
+            child: Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            border: Border.all(color: active.withOpacity(.4), width: .5),
+            boxShadow: [
+              BoxShadow(
+                  offset: Offset(0, 6),
+                  color: lightgrey.withOpacity(.1),
+                  blurRadius: 12)
+            ],
+            borderRadius: BorderRadius.circular(8),
+          ),
+          padding: const EdgeInsets.all(16),
+          margin: EdgeInsets.only(bottom: 30, right: 10),
+          child: ListView(
+            padding: EdgeInsets.only(right: 10, left: 10),
+            children: [
+              DriversTableee(),
+              SizedBox(
+                height: 60,
+              )
+            ],
+          ),
         ))
       ],
     );

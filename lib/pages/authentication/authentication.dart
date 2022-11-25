@@ -82,7 +82,15 @@ class AuthenticationPage extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Checkbox(value: true, onChanged: (value) {}),
+                      Checkbox(
+                          value: true,
+                          onChanged: (value) {
+                            if (value = true) {
+                              value = false;
+                            } else {
+                              value = true;
+                            }
+                          }),
                       CustomText(
                           text: "Remember me",
                           size: 15,

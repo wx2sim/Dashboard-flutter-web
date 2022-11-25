@@ -40,7 +40,7 @@ class InfoCard extends StatelessWidget {
               children: [
                 Expanded(
                     child: Container(
-                  color: TopColor ?? active,
+                  color: TopColor,
                   height: 5,
                 ))
               ],

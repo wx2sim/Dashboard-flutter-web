@@ -93,9 +93,9 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
               margin: EdgeInsets.all(2),
               child: CircleAvatar(
                   backgroundColor: light,
-                  child: Icon(
-                    Icons.person_outline,
-                    color: dark,
+                  child: Image.asset(
+                    'assets/icons/me.jpg',
+                    width: 28,
                   )),
             ),
           )

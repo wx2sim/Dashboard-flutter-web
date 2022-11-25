@@ -20,6 +20,9 @@ class OverViewPage extends StatelessWidget {
       children: [
         Obx(() => Row(
               children: [
+                SizedBox(
+                  height: 60,
+                ),
                 Container(
                   margin: EdgeInsets.only(
                       top: Responsivewidget.isSmallScreen(context) ? 56 : 6),
@@ -34,6 +37,7 @@ class OverViewPage extends StatelessWidget {
             )),
         Expanded(
             child: ListView(
+          padding: EdgeInsets.only(right: 10, left: 10),
           children: [
             if (Responsivewidget.isSmallScreen(context))
               OverviewCardsSmallScreen()
@@ -48,9 +52,6 @@ class OverViewPage extends StatelessWidget {
             else
               RevenueSectionLarge(),
             DataTablee(),
-            SizedBox(
-              height: 60,
-            )
           ],
         ))
       ],
